@@ -7,7 +7,26 @@ jobs:
       - checkout
       - run: echo 'hello'
       - run: echo $TEST
-      - run: exit 1
+  test_job1:
+    docker:
+      - image: soulchips/temp-backup
+    steps:
+      - checkout
+      - run: echo 'hello'
+      - run: echo $TEST
+      - run: sleep 60
+      - run: echo 'done'
+  test_job2:
+    docker:
+      - image: soulchips/temp-backup
+    steps:
+      - checkout
+      - run: echo 'hello'
+      - run: echo $TEST
+      - run: sleep 30
+      - run: echo 'done'
+
+
 
 workflows:
   version: 2
