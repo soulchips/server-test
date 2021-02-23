@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  test_job:
+    docker:
+      - image: soulchips/temp-backup
+    steps:
+      - checkout
+      - run: echo 'hello'
+
+workflows:
+  version: 2
+  now:
+    jobs:
+      - test_job
