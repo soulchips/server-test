@@ -5,7 +5,8 @@ jobs:
       - image: soulchips/temp-backup
     steps:
       - checkout
-      - run: echo 'hello'
+      - run: echo 'hello from my branch'
+      - run: echo 'this is different'
 
 workflows:
   version: 2
