@@ -25,7 +25,7 @@ jobs:
       - run: echo $TEST
       - run: sleep 30
       - run: echo 'done'
-  test_retention:
+  test_retention_docker:
     docker:
       - image: cimg/node:18.0
     retention:
@@ -34,6 +34,17 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+
+  test_retention_machine:
+    machine:
+      image: ubuntu-2004:current
+    resource_class: large
+    retention:
+      caches: 7d
+    steps:
+      - checkout
+      - run: echo "wrote to a file" > dummy.file
+      - run: cat dummy.file
 
 
 
