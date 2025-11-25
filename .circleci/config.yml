@@ -36,8 +36,7 @@ jobs:
       - run: npm test
 
   test_retention_machine:
-    machine:
-      image: ubuntu-2004:current
+    machine: true
     resource_class: large
     retention:
       caches: 7d
