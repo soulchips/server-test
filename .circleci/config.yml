@@ -55,4 +55,5 @@ workflows:
       - test_job
       - test_job1
       - test_job2
-      - test_retention
+      - test_retention_docker
+      - test_retention_machine
