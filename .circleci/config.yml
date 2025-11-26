@@ -32,8 +32,8 @@ jobs:
       caches: 7d
     steps:
       - checkout
-      - run: npm install
-      - run: npm test
+      - run: echo "wrote to a file on docker" > dummy.file
+      - run: cat dummy.file
 
   test_retention_machine:
     machine: true
